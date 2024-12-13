@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name=”robots” content="index, follow">
+    <link rel="stylesheet" href="Clickcounter.css" type="text/css" media="all"/>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" type="text/css" media="all" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  <title>Click Counter Online - Number Counter Tool - Icounted</title>
+  <meta name="description" content="Click Counter online is a web application that can facilitate or assist your work in counting objects which is equipped with various features such as a timer.">
+  <meta name="keywords" content="click counter mobile, click counter online, click counter with timer, Icounted">
+</head>
+<body>
+  <div id="outside" onclick="closenav()"></div>
+    <nav>
+    <header>
+      <button type="button" id="menu-btn" onclick="opennav()"><i class="fa-solid fa-bars"></i></button>
+      <h1 class="notranslate">Click Counter</h1>
+      <button type="button" class="btn-ty" onclick="opencard()">?</button>
+    </header>
+    <aside>
+    <div id="menu">
+      <button type="button" id="btn-cls" onclick="closenav()">×</button>
+    <ul>
+      <li onclick="closenav()"><a href="#" class="notranslate">ClickCounter</a></li>
+    </ul>
+    <hr />
+    <ul>
+      <li><button type="button" class="btn-stn" id="stln" onclick="opensetelan()">Setelan</button></li>
+    </ul>
+    <hr/>
+    <footer>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <p class="notranslate">Copyright © <time datetime="2022">2022</time></p>
+    </footer>
+    </div>
+    </aside>
+    <div id="setelan">
+      <div class="nav-setelan">
+       <button type="button" onclick="closesetelan()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+       <h1>Setelan</h1>
+      </div>
+      <ul>
+        <li><label for="stopwact">Add stopwact</label><input id="stopwact" type="checkbox" onclick="btntimer()"/></li>
+        <li><label for="dark">Dark theme</label><input id="dark" type="checkbox"/></li>
+        <li><label for="nmr">Click step</label><input id="nmr" type="number" placeholder=".  .  ." value="1" oninput="langkahct()"/></li>
+      </ul>
+        <hr/>
+        <br/>
+        <h3>Remove Or Add Button<h3/>
+        <br/>
+        <ul>
+          <li><label for="ormin">Remove button ( - )</label><input id="ormin" type="checkbox" onclick="removemin()"/></li>
+          <li><label for="orplus">Remove button ( + )</label><input id="orplus" type="checkbox" onclick="removeplus()"/></li>
+          <li><label for="orrst">Remove button ( reset )</label><input id="orrst" type="checkbox" onclick="removerst()"/></li>
+          <li><label for="orall">Remove all buttons</label><input id="orall" type="checkbox" onclick="removeall()"/></li>
+        <ul/>
+    </div>
+    </nav>
+    <main>
+    <div class="time">
+      <span id="hour">00</span>
+      <span id="colon">:</span>
+      <span id="minute">00</span>
+      <span id="colon">:</span>
+      <span id="second">00</span>
+      <span id="colon">:</span>
+      <span id="millisecond">00</span>
+    </div>
+  </div>
+    <div class="clickcounter">
+        <input type="number" step="any" min="" max="" name="number" id="number" value="0" readonly/>
+        <div class="btn">
+        <button type="button" onclick="number.value=0;" id="resetclickcounter" class="notranslate">Reset</button>
+        <button type="button" id="decrement" onclick="dec()">-</button>
+        <button type="button" id="increment" onclick="inc()">+</button>
+        </div>
+    </div>
+    <div class="btn-tm">
+      <button id="start" class="notranslate">Start</button>
+      <button id="stop" class="notranslate">Stop</button>
+      <button id="reset" class="notranslate">Reset</button>
+    </div>
+      <div class="swiper" id="tutorial-article">
+        <div class="swiper-wrapper" id="const-card">
+<article class="swiper-slide" id="card">
+  <img class="card-image" src="img/card1.jpg" alt="what is click counter" loading="lazy"/>
+  <div class="card-text">
+    <p class="tag">Clickcounter</p>
+    <h1>Definition Of Clickcounter</h1>
+    <p>Click Counter online is a counter web app that can facilitate or help your work such as counting goods, counting the number of people who come, sports, and others. This web app can also be used for tasbih. And don't use this web app for evil !</p>
+  </div>
+</article>
+<article class="swiper-slide" id="card">
+  <img class="card-image" src="img/card2.gif" alt="how to use Clickcounter" loading="lazy"/>
+  <div class="card-text">
+    <p class="tag">Clickcounter</p>
+    <h1>How to use Clickcounter</h1>
+    <p>If you click the button below it will happen:<br/><br/>'+' = Added numbers<br/>'-' = Reducing numbers<br/>'reset' = Change all nominal to 0.</p>
+  </div>
+  <div class="card-btn">
+  </div>
+</article>
+<article class="swiper-slide" id="card">
+  <img class="card-image" src="img/card3.gif" alt="settings location on Clickcounter" loading="lazy"/>
+  <div class="card-text">
+    <p class="tag">Clickcounter</p>
+    <h1>Settings Location</h1>
+    <p>Do the following:<br/><br/><i class="fa-solid fa-bars"></i>&nbsp;&nbsp; «&nbsp;Click<br/>'Setelan'&nbsp; « Click<br/><br/>And set your click counter at will.</p>
+  </div>
+</article>
+<article class="swiper-slide" id="card">
+  <img class="card-image" src="img/card4.gif" alt="how to add a Stopwatch on Clickcounter" loading="lazy"/>
+  <div class="card-text">
+    <p class="tag">Clickcounter</p>
+    <h1>Add a Stopwatch</h1>
+    <p>Do the following:<br/><br/><i class="fa-solid fa-bars"></i>&nbsp;&nbsp; «&nbsp;Click<br/>'Setelan'&nbsp; « Click<br/>'Add stopwact'&nbsp; « Click<br/><br/>And your stopwatch has appeared.</p>
+  </div>
+</article>
+<article class="swiper-slide" id="card">
+  <img class="card-image" src="img/card5.gif" alt="how to change Clickcounter theme to dark theme" loading="lazy"/>
+  <div class="card-text">
+    <p class="tag">Clickcounter</p>
+    <h1>Added Dark Theme </h1>
+    <p>Do the following:<br/><br/><i class="fa-solid fa-bars"></i>&nbsp;&nbsp; «&nbsp;Click<br/>'Setelan'&nbsp; « Click<br/>'Dark theme'&nbsp; « Click<br/><br/>And Your clickcouter will be dark themed.</p>
+  </div>
+</article>
+<article class="swiper-slide" id="card">
+  <img class="card-image" src="img/card6.gif" alt="how to change Clickcounter steps" loading="lazy"/>
+  <div class="card-text">
+    <p class="tag">Clickcounter</p>
+    <h1>Setting The Click Step</h1>
+    <p>Do the following:<br/><br/><i class="fa-solid fa-bars"></i>&nbsp;&nbsp; «&nbsp;Click<br/>'Setelan'&nbsp; « Click<br/>'Click step'&nbsp; « Click & Type in your click step number<br/><br/>And your clickcouter will add and subtract the numbers according to what you have typed.</p>
+  </div>
+</article>
+<article class="swiper-slide" id="card">
+  <img class="card-image" src="img/card7.jpg" alt="feature of removing or adding buttons on Clickcounter" loading="lazy"/>
+  <div class="card-text">
+    <p class="tag">Clickcounter</p>
+    <h1>Remove Or Add Button</h1>
+    <p>Do the following:<br/><br/><i class="fa-solid fa-bars"></i>&nbsp;&nbsp; «&nbsp;Click<br/>'Setelan'&nbsp; « Click<br/><br/>dan atur tombol Clickcounter Anda.</p>
+  </div>
+</article>
+</div>
+  <button class="swiper-button-next" id="nav-card-btn"></button>
+  <button class="swiper-button-prev" id="nav-card-btn"></button>
+  <button class="exit-card" onclick="closecard()">×</button>
+</div>
+    </main>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@admob-plus/admob-plus@latest/admob.min.js"></script>
+    <script>
+    // clickcounter
+var clickcounternbr = 1;
+const clickcounterinput = document.getElementById("number");
+
+function inc() {
+ var x = parseInt(clickcounterinput.value);
+ x += clickcounternbr;
+ clickcounterinput.value = x;
+}
+function dec() {
+ var x = parseInt(clickcounterinput.value);
+ x -= clickcounternbr;
+ clickcounterinput.value = x;
+}
+
+    // nav
+      function opennav() {
+  document.getElementById("menu").style.left = "0";
+  document.getElementById("outside").style.display = "block";
+}
+function closenav() {
+  document.getElementById("menu").style.left = "-70%";
+  document.getElementById("outside").style.display = "none";
+}
+function opensetelan() {
+  document.getElementById("setelan").style.top = "0";
+}
+function closesetelan() {
+  document.getElementById("setelan").style.top = "100%";
+}
+
+// stopwatch code by Codinglab which has been modified | www.codinglabweb.com
+let hr = min = sec = ms = "0" + 0,
+    startTimer;
+   document.getElementById("start").addEventListener("click", start);
+   document.getElementById("stop").addEventListener("click", stop);
+   document.getElementById("reset").addEventListener("click", reset);
+  function start() {
+    startTimer = setInterval(()=>{
+      ms++
+      ms = ms < 10 ? "0" + ms : ms;
+      if(ms == 100){
+        sec++;
+        sec = sec < 10 ? "0" + sec : sec;
+        ms = "0" + 0;
+      }
+      if(sec == 60){
+        min++;
+        min = min < 10 ? "0" + min : min;
+        sec = "0" + 0;
+      }
+      if(min == 60){
+        hr++;
+        hr = hr < 10 ? "0" + hr : hr;
+        min = "0" + 0;
+      }
+      Value();
+    },10);
+  }
+  function stop() {
+    clearInterval(startTimer);
+  }
+  function reset() {
+    clearInterval(startTimer);
+    hr = min = sec = ms = "0" + 0;
+    Value();
+  }
+  function Value() {
+    document.getElementById("millisecond").innerText = ms;
+    document.getElementById("second").innerText = sec;
+    document.getElementById("minute").innerText = min;
+    document.getElementById("hour").innerText = hr;
+  }
+  const time = document.querySelector(".time");
+  const btntm = document.querySelector(".btn-tm");
+  const checkbtn = document.getElementById("stopwact");
+  const inputnumber = document.querySelector(".clickcounter input");
+  
+    //setelan
+
+function btntimer() {
+    if (checkbtn.checked == true) {
+      inputnumber.style.marginTop = "30px",
+      time.style.display ="block",
+      btntm.style.display ="block";
+    }
+    else {
+      time.style.display ="none",
+      btntm.style.display ="none";
+    }
+  }
+  
+  //dark mode
+  
+// Cek status tema saat halaman dimuat
+document.addEventListener("DOMContentLoaded", function() {
+    // Periksa apakah tema gelap disimpan di local storage
+    if (localStorage.getItem("theme") === "dark") {
+        removeDark();
+        document.getElementById("dark").checked = true;
+    }
+});
+
+// Tambahkan event listener pada toggle switch
+document.getElementById("dark").addEventListener("change", function(event) {
+    if (event.target.checked) {
+        dark();
+        localStorage.setItem("theme", "dark");
+    } else {
+        removeDark();
+        localStorage.setItem("theme", "light");
+    }
+});
+
+// Fungsi untuk mengaktifkan tema gelap
+
+  function dark() {
+    document.body.classList.add("dark");
+  }
+  function removeDark() {
+    document.body.classList.remove("dark");
+  }
+  
+  
+  const resetcct = document.getElementById("resetclickcounter");
+  
+  function removemin() {
+   document.getElementById("decrement").classList.toggle("removemin"),
+   document.getElementById("increment").classList.toggle("zoomplus"),
+   document.getElementById("increment").classList.toggle("switchgridplus");
+  }
+  function removeplus() {
+    document.getElementById("increment").classList.toggle("removeplus"),
+   document.getElementById("decrement").classList.toggle("zoommin");
+  }
+  function removerst() {
+    document.getElementById("resetclickcounter").classList.toggle("removerst");
+  }
+  function removeall() {
+    document.getElementById("decrement").classList.toggle("removemin"),
+    document.getElementById("increment").classList.toggle("removeplus"),
+    document.getElementById("resetclickcounter").classList.toggle("removerst");
+  }
+  function langkahct() {
+    clickcounternbr=parseInt(nmr.value);
+  }
+  const swiper = new Swiper('.swiper', {
+  // Optional parameters
+  loop: true,
+  slidesPerGroup: 1,
+  slidesPerView: 1,
+
+// Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  }
+});
+function opencard() {
+  document.getElementById("tutorial-article").style.display = "block";
+}
+function closecard() {
+  document.getElementById("tutorial-article").style.display = "none";
+}
+    </script>
+</html>

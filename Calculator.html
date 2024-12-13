@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <meta name=”robots” content="index, follow">
+    <link rel="stylesheet" href="Calculator.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" type="text/css" media="all" />
+    <title>Calculator</title>
+    </head>
+    <body id="body">
+     <div class="calc">
+  <form class="Calculator" accept-charset="utf-8">
+  <input type="text" name="txt" id="input-calc" readonly=""/>
+  <div class="btncalc">
+  <div class="btn1">
+    <input type="button" value="C" class="number" id="btncl1" onclick="form.txt.value = ''"/>
+    <input type="button" class="number" id="btncl2" value="%" onclick="form.txt.value += '%'"/>
+    <input type="button" id="btncl3" value="&#x2326;"class="number" onclick="form.txt.value = form.txt.value.substr(0 , form.txt.value.length -1)"/>
+    <input type="button" value="÷" class="number" id="operbtn1" onclick="form.txt.value += '/'"/>
+  </div>
+  <div class="btn">
+    <input type="button" id="btncl4" value="7" class="number" onclick="form.txt.value += '7'"/>
+    <input type="button" id="btncl5" value="8" class="number" onclick="form.txt.value += '8'"/>
+    <input type="button" id="btncl6" value="9" class="number" onclick="form.txt.value += '9'"/>
+    <input type="button" value="×" class="number" id="operbtn2" onclick="form.txt.value += '*'"/>
+  </div>
+  <div class="btn">
+    <input type="button" id="btncl7" value="4" class="number" onclick="form.txt.value += '4'"/>
+    <input type="button" id="btncl8" value="5" class="number" onclick="form.txt.value += '5'"/>
+    <input type="button" id="btncl9" value="6" class="number" onclick="form.txt.value += '6'"/>
+    <input type="button" value="-" class="number" id="operbtn3" onclick="form.txt.value += '-'"/>
+  </div>
+  <div class="btn">
+    <input type="button" id="btncl10" value="1" class="number" onclick="form.txt.value += '1'"/>
+    <input type="button" id="btncl11" value="2" class="number" onclick="form.txt.value += '2'"/>
+    <input type="button" id="btncl12" value="3" class="number" onclick="form.txt.value += '3'"/>
+    <input type="button" value="+" class="number" id="operbtn4" onclick="form.txt.value += '+'"/>
+  </div>
+  <div class="btnN">
+    <input type="button" id="btncl13" value="00" class="number" onclick="form.txt.value += '00'"/>
+    <input type="button" id="btncl14" value="0" class="number" onclick="form.txt.value += '0'"/>
+    <input type="button" id="btncl15" value="." class="number" onclick="form.txt.value += '.'"/>
+    <input type="button" value="=" class="number" id="operbtn5" onclick="form.txt.value = eval(form.txt.value)"/>
+  </div>
+  </div>
+  </form>
+</div>
+      <nav>
+      <button id="btnsetelan" onclick="opens()"><i class="fa-solid fa-palette"></i></button>
+          <div id="menu">
+      <button type="button" id="btn-cls" onclick="closenav()">×</button>
+      <ul>
+        <li><label for="dark">Tema Gelap</label><input id="dark" type="checkbox" onclick="dark()"/></li>
+        <hr/>
+        <li><label for="colorPicker">Tombol Operasi</label>
+  <input type="color" id="colorPicker"></li>
+        <li><label for="colorPicker2">latarbelakang</label>
+  <input type="color" id="colorPicker2"></li>
+        <li><label for="colorPicker3">Input Text</label>
+  <input type="color" id="colorPicker3"></li>
+        <li><label for="colorPicker4">Lainnya</label>
+  <input type="color" id="colorPicker4"></li>
+      </ul>
+    </div>
+    </nav>
+<script>
+  function opens() {
+    document.getElementById('menu').style.display = "block";
+  }
+  function closenav() {
+   document.getElementById('menu').style.display = "none";
+  }
+  function dark() {
+    document.body.classList.toggle("dark");
+  }
+  const colorPicker = document.getElementById('colorPicker');
+  const colorPicker2 = document.getElementById('colorPicker2');
+  const colorPicker3 = document.getElementById('colorPicker3');
+  const colorPicker4 = document.getElementById('colorPicker4');
+  const changeColorinputcalc = document.getElementById('input-calc');
+  const changeColorlain1 = document.getElementById('btncl1');
+  const changeColorlain2 = document.getElementById('btncl2');
+  const changeColorlain3 = document.getElementById('btncl3');
+  const changeColorlain4 = document.getElementById('btncl4');
+  const changeColorlain5 = document.getElementById('btncl5');
+  const changeColorlain6 = document.getElementById('btncl6');
+  const changeColorlain7 = document.getElementById('btncl7');
+  const changeColorlain8 = document.getElementById('btncl8');
+  const changeColorlain9 = document.getElementById('btncl9');
+  const changeColorlain10 = document.getElementById('btncl10');
+  const changeColorlain11 = document.getElementById('btncl11');
+  const changeColorlain12 = document.getElementById('btncl12');
+  const changeColorlain13 = document.getElementById('btncl13');
+  const changeColorlain14 = document.getElementById('btncl14');
+  const changeColorlain15 = document.getElementById('btncl15');
+  const changeColorbody = document.getElementById('body');
+const changeColorDiv = document.getElementById('operbtn1');
+const changeColorDiv2 = document.getElementById('operbtn2');
+const changeColorDiv3 = document.getElementById('operbtn3');
+const changeColorDiv4 = document.getElementById('operbtn4');
+const changeColorDiv5 = document.getElementById('operbtn5');
+
+colorPicker.addEventListener('input', () => {
+  changeColorDiv.style.color = colorPicker.value;
+  changeColorDiv2.style.color = colorPicker.value;
+  changeColorDiv3.style.color = colorPicker.value;
+  changeColorDiv4.style.color = colorPicker.value;
+  changeColorDiv5.style.color = colorPicker.value;
+});
+colorPicker2.addEventListener('input', () => {
+  changeColorbody.style.backgroundColor = colorPicker2.value;
+});
+colorPicker3.addEventListener('input', () => {
+  changeColorinputcalc.style.backgroundColor = colorPicker3.value;
+});
+colorPicker4.addEventListener('input', () => {
+  changeColorlain1.style.color = colorPicker4.value;
+  changeColorlain2.style.color = colorPicker4.value;
+  changeColorlain3.style.color = colorPicker4.value;
+  changeColorlain4.style.color = colorPicker4.value;
+  changeColorlain5.style.color = colorPicker4.value;
+  changeColorlain6.style.color = colorPicker4.value;
+  changeColorlain7.style.color = colorPicker4.value;
+  changeColorlain8.style.color = colorPicker4.value;
+  changeColorlain9.style.color = colorPicker4.value;
+  changeColorlain10.style.color = colorPicker4.value;
+  changeColorlain11.style.color = colorPicker4.value;
+  changeColorlain12.style.color = colorPicker4.value;
+  changeColorlain13.style.color = colorPicker4.value;
+  changeColorlain14.style.color = colorPicker4.value;
+  changeColorlain15.style.color = colorPicker4.value;
+});
+</script>
+</body>
+</html>
